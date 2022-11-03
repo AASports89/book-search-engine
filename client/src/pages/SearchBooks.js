@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Jumbotron, Container, Col, Form, Button, Card, CardBooks } from 'react-bootstrap';
+import { Jumbotron, Container, Col, Form, Button, Card } from 'react-bootstrap';
 
 import Auth from '../utils/auth';
 import { saveBook, searchGoogleBooks } from '../utils/API';
@@ -111,7 +111,7 @@ const SearchBooks = () => {
             ? `Viewing ${searchedBooks.length} results:`
             : 'Search for a book to begin'}
         </h2>
-        <CardBooks>
+        <Col>
           {searchedBooks.map((book) => {
             return (
               <Card key={book.bookId} border='dark'>
@@ -136,7 +136,7 @@ const SearchBooks = () => {
               </Card>
             );
           })}
-        </CardBooks>
+        </Col>
       </Container>
     </>
   );
