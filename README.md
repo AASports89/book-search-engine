@@ -99,8 +99,7 @@ THEN I am logged out of the site and presented with a menu with the options Sear
 
 ## Deployed Application
 ---
-> https://dashboard.heroku.com/apps/hidden-wave-60496
-
+> https://hidden-wave-60496.herokuapp.com/
 ## GitHUB Repository
 ---
 > https://github.com/AASports89/book-search-engine
