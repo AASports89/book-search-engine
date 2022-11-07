@@ -12,12 +12,14 @@ const bookSchema = new Schema({
     required: true,
   },
   // saved book id from GoogleBooks
-  bookId: {
+  id: {
     type: String,
     required: true,
   },
-  image: {
+  image: { 
     type: String,
+    unique: true, 
+    dropDups: true
   },
   link: {
     type: String,

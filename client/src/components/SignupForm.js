@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Form, Button, Alert } from 'react-bootstrap';
+import { Alert } from 'react-bootstrap';
 
 import { createUser } from '../utils/API';
 import Auth from '../utils/auth';
@@ -52,15 +52,15 @@ const SignupForm = () => {
   return (
     <>
       {/* This is needed for the validation functionality above */}
-      <Form noValidate validated={validated} onSubmit={handleFormSubmit}>
+      <form className='flex-row justify-content-center' noValidate validated={validated} onSubmit={handleFormSubmit}>
         {/* show alert if server response is bad */}
         <Alert dismissible onClose={() => setShowAlert(false)} show={showAlert} variant='danger'>
           Something went wrong with your signup!
         </Alert>
 
-        <Form.Group>
-          <Form.Label htmlFor='username'>Username</Form.Label>
-          <Form.Control
+        <div className='col-4'>
+          <label htmlFor='username'>Username</label>
+          <input
             type='text'
             placeholder='Your username'
             name='username'
@@ -68,12 +68,12 @@ const SignupForm = () => {
             value={userFormData.username}
             required
           />
-          <Form.Control.Feedback type='invalid'>Username is required!</Form.Control.Feedback>
-        </Form.Group>
+          <label type='invalid'>Username is required!</label>
+        </div>
 
-        <Form.Group>
-          <Form.Label htmlFor='email'>Email</Form.Label>
-          <Form.Control
+        <div className='col-4'>
+          <label htmlFor='email'>Email</label>
+          <input
             type='email'
             placeholder='Your email address'
             name='email'
@@ -81,12 +81,12 @@ const SignupForm = () => {
             value={userFormData.email}
             required
           />
-          <Form.Control.Feedback type='invalid'>Email is required!</Form.Control.Feedback>
-        </Form.Group>
+          <label type='invalid'>Email is required!</label>
+        </div>
 
-        <Form.Group>
-          <Form.Label htmlFor='password'>Password</Form.Label>
-          <Form.Control
+        <div className='col-4'>
+          <label htmlFor='password'>Password</label>
+          <input
             type='password'
             placeholder='Your password'
             name='password'
@@ -94,15 +94,15 @@ const SignupForm = () => {
             value={userFormData.password}
             required
           />
-          <Form.Control.Feedback type='invalid'>Password is required!</Form.Control.Feedback>
-        </Form.Group>
-        <Button
+          <label type='invalid'>Password is required!</label>
+        </div>
+        <button
           disabled={!(userFormData.username && userFormData.email && userFormData.password)}
           type='submit'
           variant='success'>
-          Submit
-        </Button>
-      </Form>
+          Submit 📬
+        </button>
+      </form>
     </>
   );
 };
