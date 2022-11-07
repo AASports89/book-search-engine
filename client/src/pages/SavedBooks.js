@@ -1,9 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Jumbotron } from 'react-bootstrap/Jumbotron';
-import { Container } from 'react-bootstrap/Container';
-import { Col } from 'react-bootstrap/Col';
-import { Card } from 'react-bootstrap/Card';
-import { Button } from 'react-bootstrap/Button';
+import { Jumbotron, Container, CardColumns, Card, Button } from 'react-bootstrap';
 
 import { getMe, deleteBook } from '../utils/API';
 import Auth from '../utils/auth';
@@ -82,7 +78,7 @@ const SavedBooks = () => {
             ? `Viewing ${userData.savedBooks.length} saved ${userData.savedBooks.length === 1 ? 'book' : 'books'}:`
             : 'You have no saved books!'}
         </h2>
-        <Col>
+        <CardColumns>
           {userData.savedBooks.map((book) => {
             return (
               <Card key={book.bookId} border='dark'>
@@ -98,7 +94,7 @@ const SavedBooks = () => {
               </Card>
             );
           })}
-        </Col>
+        </CardColumns>
       </Container>
     </>
   );
