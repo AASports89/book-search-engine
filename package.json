@@ -1,7 +1,7 @@
 {
   "name": "googlebooks-app",
   "version": "1.0.0",
-  "description": "",
+  "description": "A book search engine powered by React.js, bootstrap, & the MERN full-stack design.",
   "main": "server/server.js",
   "scripts": {
     "start": "node server/server.js",
