@@ -17,12 +17,10 @@ function NotFound() {
           <Col xs={12} sm={8} md={10}>
             <div className="not-found__content">
               <h1 className="not-found__title">
-                <strong>Oh no! Page Not Found</strong>
+                <strong>Error❗⛔ Page Not Found❗⛔</strong>
               </h1>
               <p className="not-found__help">
-                Check that you typed the address correctly, go back to your
-                previous page or try using our navigation bar to find something
-                specific.
+                Try Searching Again❗⛔
               </p>
             </div>
           </Col>

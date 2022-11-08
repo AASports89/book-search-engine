@@ -1,13 +1,13 @@
-# **Book Seacrh Engine** [![License: ISC](https://img.shields.io/badge/License-ISC-blue.svg)](#isc-license)
+# **MERN Google Book Search** [![License: ISC](https://img.shields.io/badge/License-ISC-blue.svg)](#isc-license)
 ---
 
 ## Overview
 ---
-**Book Seacrh Engine** is a webpage application powered by dynamic ```JavaScript``` via a "back-end" structure utilizing ```REACT.js``` with dependencies on ```MongoDB```, ```Mongoose```, ```GraphQL```, and ```Apollo``` for data maintenance, storage and queries. Additionally, the client-side will feature a user-friendly and intuitive experience by incorporating an ```HTML``` back-bone strongly supported by the ```REACT.js``` build technology.
+**MERN Google Book Search** is a webpage application powered by dynamic ```JavaScript``` via a "back-end" structure utilizing ```REACT.js``` with dependencies on ```MongoDB```, ```Mongoose```, ```GraphQL```, and ```Apollo``` for data maintenance, storage and queries. Additionally, the client-side will feature a user-friendly and intuitive experience by incorporating an ```HTML``` back-bone strongly supported by the ```REACT.js``` build technology.
 
 This application allows users to search and save their favorite books using the data retrieved from ```Google Books API```. Furthermore, the site will feature secure login technology via ```JSONwebtokens``` combined with ```Bcrypt``` password encryption, in order to ensure user privacy in the form of secured data.
 
-Overall, **Book Seacrh Engine**  follows the ```MERN``` concept referencing "full-stack" development with a ```JavaScript``` powered "back-end" and a dynamic "front-end" rendered using ```REACT.js```. All of these combined languages and processes create the unique user experience while visiting the application's pages deployed via ```Heroku```. 
+Overall, **MERN Google Book Search**  follows the ```MERN``` concept referencing "full-stack" development with a ```JavaScript``` powered "back-end" and a dynamic "front-end" rendered using ```REACT.js```. All of these combined languages and processes create the unique user experience while visiting the application's pages deployed via ```Heroku```. 
 
 ## Table of Contents
 ---
@@ -34,7 +34,7 @@ SO THAT I can keep a list of books to purchase
 
 ## Acceptance Criteria
 ---
-> **Note:** The following criteria is used to determine if the standards set for **Book Seacrh Engine** have been met:
+> **Note:** The following criteria is used to determine if the standards set for **MERN Google Book Search** have been met:
 
 ```md
 GIVEN a book search engine
@@ -71,12 +71,7 @@ THEN I am logged out of the site and presented with a menu with the options Sear
 ----
 > **Important:** Once, the source code has been cloned from the repository @https://github.com/AASports89/book-search-engine
 
- Enter the following to initiate the required application package installations, seeding, & run process:
-
- ```
- npm run seed
- ```
- -followed by-
+ Enter the following to initiate the required application package installations & run process:
 
  ```
  npm run install concurrently
@@ -95,7 +90,7 @@ THEN I am logged out of the site and presented with a menu with the options Sear
 ---
 > **Note:**  The following animation shows the application's look and functionality:
 
-> **Application Look:** !["**Build A Bet** features an intuitive & user-friendly UI as demonstrated in the following GIF."](./images/google-book-search.gif)
+> **Application Look:** !["**MERN Google Book Search** features an intuitive & user-friendly UI as demonstrated in the following GIF."](./images/google-book-sear.gif)
 
 ## Deployed Application
 ---
@@ -106,7 +101,7 @@ THEN I am logged out of the site and presented with a menu with the options Sear
 
 ## Evaluation Guideline
 ---
-> **Note**: The following evaluation guideline is used to determine if **Book Seacrh Engine** meets the requirements for a minimum viable product:
+> **Note**: The following evaluation guideline is used to determine if **MERN Google Book Search** meets the requirements for a minimum viable product:
 
 ### Technical Acceptance Criteria: 40%
 ---

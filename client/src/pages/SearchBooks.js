@@ -39,14 +39,14 @@ const SearchBooks = () => {
       const response = await searchGoogleBooks(searchInput);
 
       if (!response.ok) {
-        throw new Error('something went wrong!');
+        throw new Error('Error❗⛔ Failed Response❗⛔');
       }
 
       const { items } = await response.json();
 
       const bookData = items.map((book) => ({
         bookId: book.id,
-        authors: book.volumeInfo.authors || ['No author to display'],
+        authors: book.volumeInfo.authors || ['No Author ✍️ Available❗🤐'],
         title: book.volumeInfo.title,
         description: book.volumeInfo.description,
         image: book.volumeInfo.imageLinks?.thumbnail || '',
@@ -75,7 +75,7 @@ const SearchBooks = () => {
       const response = await saveBook(bookToSave, token);
 
       if (!response.ok) {
-        throw new Error('something went wrong!');
+        throw new Error('Error❗⛔ Failed Response❗⛔');
       }
 
       // if book successfully saves to user's account, save book id to state
@@ -98,7 +98,7 @@ const SearchBooks = () => {
                 onChange={(e) => setSearchInput(e.target.value)}
                 type="text"
                 size="lg"
-                placeholder="Search for a book"
+                placeholder="Enter Book Info Here...🔎"
               />
             </Col>
             <Col xs={12} md={4}>
@@ -111,10 +111,10 @@ const SearchBooks = () => {
       </Jumbotron>
 
       <Container>
-        <h2>
+        <h2 id="h2">
           {searchedBooks.length
             ? `Viewing ${searchedBooks.length} results:`
-            : 'Search for a book to begin'}
+            : 'Search For A 📖 Here'}
         </h2>
         <CardColumns id="book-col">
           {searchedBooks.map((book) => {
@@ -123,7 +123,7 @@ const SearchBooks = () => {
                 {book.image ? (
                   <Card.Img
                     src={book.image}
-                    alt={`The cover for ${book.title}`}
+                    alt={`${book.title}'s Cover`}
                     variant="top"
                   />
                 ) : null}

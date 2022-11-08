@@ -27,7 +27,7 @@ const SavedBooks = () => {
         const response = await getMe(token);
 
         if (!response.ok) {
-          throw new Error('something went wrong!');
+          throw new Error('Error❗⛔ Failed Response❗⛔');
         }
 
         const user = await response.json();
@@ -52,7 +52,7 @@ const SavedBooks = () => {
       const response = await deleteBook(bookId, token);
 
       if (!response.ok) {
-        throw new Error('something went wrong!');
+        throw new Error('Error❗⛔ Failed Response❗⛔');
       }
 
       const updatedUser = await response.json();
@@ -72,8 +72,8 @@ const SavedBooks = () => {
   return (
     <>
       <Jumbotron fluid className="text-light bg-dark">
-        <Container>
-          <h1>Viewing saved books!</h1>
+        <Container id="main-title">
+          <h1>Saved Book Catalog 🗄️</h1>
         </Container>
       </Jumbotron>
       <Container>
@@ -82,16 +82,16 @@ const SavedBooks = () => {
             ? `Viewing ${userData.savedBooks.length} saved ${
                 userData.savedBooks.length === 1 ? 'book' : 'books'
               }:`
-            : 'You have no saved books!'}
+            : 'Book Catalog Empty❗⛔'}
         </h2>
-        <CardColumns>
+        <CardColumns id="col">
           {userData.savedBooks.map((book) => {
             return (
               <Card key={book.bookId} border="dark">
                 {book.image ? (
                   <Card.Img
                     src={book.image}
-                    alt={`The cover for ${book.title}`}
+                    alt={`${book.title}'s Book Cover`}
                     variant="top"
                   />
                 ) : null}
@@ -100,7 +100,7 @@ const SavedBooks = () => {
                   <p className="small">Authors: {book.authors}</p>
                   <Card.Text>{book.description}</Card.Text>
                   <Button
-                    className="btn-block btn-danger"
+                    className="btn-block btn-danger" id="btn4"
                     onClick={() => handleDeleteBook(book.bookId)}
                   >
                     Delete Book ❌

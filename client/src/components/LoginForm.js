@@ -30,7 +30,7 @@ const LoginForm = () => {
       const response = await loginUser(userFormData);
 
       if (!response.ok) {
-        throw new Error('something went wrong!');
+        throw new Error('Error❗⛔ Failed Response❗⛔');
       }
 
       const { token, user } = await response.json();
@@ -57,35 +57,35 @@ const LoginForm = () => {
           show={showAlert}
           variant="danger"
         >
-          Something went wrong with your login credentials!
+          Error❗⛔ Login Failed❗⛔
         </Alert>
         <Form.Group>
-          <Form.Label htmlFor="email">Email</Form.Label>
+          <Form.Label htmlFor="email">Email 📧:</Form.Label>
           <Form.Control
             type="text"
-            placeholder="Your email"
+            placeholder="Enter Email Here..."
             name="email"
             onChange={handleInputChange}
             value={userFormData.email}
             required
           />
           <Form.Control.Feedback type="invalid">
-            Email is required!
+              Email Required❗⛔
           </Form.Control.Feedback>
         </Form.Group>
 
         <Form.Group>
-          <Form.Label htmlFor="password">Password</Form.Label>
+          <Form.Label htmlFor="password">Password 🔑:</Form.Label>
           <Form.Control
             type="password"
-            placeholder="Your password"
+            placeholder="Enter Password Here..."
             name="password"
             onChange={handleInputChange}
             value={userFormData.password}
             required
           />
           <Form.Control.Feedback type="invalid">
-            Password is required!
+            Password Required❗⛔
           </Form.Control.Feedback>
         </Form.Group>
         <Button

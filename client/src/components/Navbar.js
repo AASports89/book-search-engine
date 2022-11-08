@@ -19,29 +19,29 @@ const AppNavbar = () => {
       <Navbar id="navi" bg="dark" variant="dark" expand="lg">
         <Container>
           <Navbar.Brand as={Link} to="/">
-            <img
+            <img id="google"
               src="https://res.cloudinary.com/dhqsixgmo/image/upload/v1667893491/Google_Books_logo2_w3ocjs.webp"
               alt="Google Books Search"
             ></img>
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="navbar" />
           <Navbar.Collapse id="navbar">
-            <Nav className="ml-auto">
-              <NavLink id="btn1" as={Link} to="/">
+            <Nav id="nav-link" className="ml-auto">
+              <NavLink id="btn5" as={Link} to="/">
                 Search Books 🔍
               </NavLink>
               {/* if user is logged in show saved books and logout */}
               {Auth.loggedIn() ? (
                 <>
-                  <NavLink id="btn" as={Link} to="/saved">
+                  <NavLink id="btn5" as={Link} to="/saved">
                     View Books 🔎
                   </NavLink>
-                  <NavLink id="btn" onClick={Auth.logout}>
+                  <NavLink id="btn5" onClick={Auth.logout}>
                     Logout 🚫
                   </NavLink>
                 </>
               ) : (
-                <NavLink id="btn1" onClick={() => setShowModal(true)}>
+                <NavLink id="btn6" onClick={() => setShowModal(true)}>
                   Login 📡/Sign Up 🔏
                 </NavLink>
               )}
@@ -60,12 +60,14 @@ const AppNavbar = () => {
         <Tab.Container defaultActiveKey="login">
           <Modal.Header closeButton>
             <Modal.Title id="signup-modal">
-              <Nav variant="pills">
-                <Nav.Item id="btn2">
-                  <Nav.Link eventKey="login">Login 📡</Nav.Link>
+              <Nav id="nav" variant="pills">
+                <Nav.Item id="btn9">
+                  <Nav.Link Style={"color: whitesmoke; background-image: linear-gradient(rgb(126, 153, 251) 0%, rgb(6, 6, 129) 100%); border-radius: 1em; font-size: 80%"} eventKey="login">Login 📡</Nav.Link>
                 </Nav.Item>
-                <Nav.Item id="btn3">
+                <Nav.Item>
+                  <button id="btn8">
                   <Nav.Link eventKey="signup">Sign Up 🔏</Nav.Link>
+                  </button>
                 </Nav.Item>
               </Nav>
             </Modal.Title>
