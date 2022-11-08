@@ -1,12 +1,18 @@
 import React, { useState } from 'react';
-import { Alert } from 'react-bootstrap';
+import Form from 'react-bootstrap/Form';
+import Button from 'react-bootstrap/Button';
+import Alert from 'react-bootstrap/Alert';
 
 import { createUser } from '../utils/API';
 import Auth from '../utils/auth';
 
 const SignupForm = () => {
   // set initial form state
-  const [userFormData, setUserFormData] = useState({ username: '', email: '', password: '' });
+  const [userFormData, setUserFormData] = useState({
+    username: '',
+    email: '',
+    password: '',
+  });
   // set state for form validation
   const [validated] = useState(false);
   // set state for alert
@@ -52,57 +58,75 @@ const SignupForm = () => {
   return (
     <>
       {/* This is needed for the validation functionality above */}
-      <form className='flex-row justify-content-center' noValidate validated={validated} onSubmit={handleFormSubmit}>
+      <Form noValidate validated={validated} onSubmit={handleFormSubmit}>
         {/* show alert if server response is bad */}
-        <Alert dismissible onClose={() => setShowAlert(false)} show={showAlert} variant='danger'>
+        <Alert
+          dismissible
+          onClose={() => setShowAlert(false)}
+          show={showAlert}
+          variant="danger"
+        >
           Something went wrong with your signup!
         </Alert>
 
-        <div className='col-4'>
-          <label htmlFor='username'>Username</label>
-          <input
-            type='text'
-            placeholder='Your username'
-            name='username'
+        <Form.Group>
+          <Form.Label htmlFor="username">Username</Form.Label>
+          <Form.Control
+            type="text"
+            placeholder="Your username"
+            name="username"
             onChange={handleInputChange}
             value={userFormData.username}
             required
           />
-          <label type='invalid'>Username is required!</label>
-        </div>
+          <Form.Control.Feedback type="invalid">
+            Username is required!
+          </Form.Control.Feedback>
+        </Form.Group>
 
-        <div className='col-4'>
-          <label htmlFor='email'>Email</label>
-          <input
-            type='email'
-            placeholder='Your email address'
-            name='email'
+        <Form.Group>
+          <Form.Label htmlFor="email">Email</Form.Label>
+          <Form.Control
+            type="email"
+            placeholder="Your email address"
+            name="email"
             onChange={handleInputChange}
             value={userFormData.email}
             required
           />
-          <label type='invalid'>Email is required!</label>
-        </div>
+          <Form.Control.Feedback type="invalid">
+            Email is required!
+          </Form.Control.Feedback>
+        </Form.Group>
 
-        <div className='col-4'>
-          <label htmlFor='password'>Password</label>
-          <input
-            type='password'
-            placeholder='Your password'
-            name='password'
+        <Form.Group>
+          <Form.Label htmlFor="password">Password</Form.Label>
+          <Form.Control
+            type="password"
+            placeholder="Your password"
+            name="password"
             onChange={handleInputChange}
             value={userFormData.password}
             required
           />
-          <label type='invalid'>Password is required!</label>
-        </div>
-        <button
-          disabled={!(userFormData.username && userFormData.email && userFormData.password)}
-          type='submit'
-          variant='success'>
+          <Form.Control.Feedback type="invalid">
+            Password is required!
+          </Form.Control.Feedback>
+        </Form.Group>
+        <Button
+          disabled={
+            !(
+              userFormData.username &&
+              userFormData.email &&
+              userFormData.password
+            )
+          }
+          id="btn2"
+          type="submit"
+        >
           Submit 📬
-        </button>
-      </form>
+        </Button>
+      </Form>
     </>
   );
 };

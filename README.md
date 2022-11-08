@@ -95,7 +95,7 @@ THEN I am logged out of the site and presented with a menu with the options Sear
 ---
 > **Note:**  The following animation shows the application's look and functionality:
 
-> **Application Look:** !["**Build A Bet** features an intuitive & user-friendly UI as demonstrated in the following GIF."](./images/book-engine.gif)
+> **Application Look:** !["**Build A Bet** features an intuitive & user-friendly UI as demonstrated in the following GIF."](./images/google-book-search.gif)
 
 ## Deployed Application
 ---

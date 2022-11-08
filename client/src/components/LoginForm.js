@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
-import { Alert } from 'react-bootstrap';
+import Form from 'react-bootstrap/Form';
+import Button from 'react-bootstrap/Button';
+import Alert from 'react-bootstrap/Alert';
 
 import { loginUser } from '../utils/API';
 import Auth from '../utils/auth';
@@ -48,42 +50,52 @@ const LoginForm = () => {
 
   return (
     <>
-      <form className='flex-row justify-content-center' noValidate validated={validated} onSubmit={handleFormSubmit}>
-        <Alert dismissible onClose={() => setShowAlert(false)} show={showAlert} variant='danger'>
+      <Form noValidate validated={validated} onSubmit={handleFormSubmit}>
+        <Alert
+          dismissible
+          onClose={() => setShowAlert(false)}
+          show={showAlert}
+          variant="danger"
+        >
           Something went wrong with your login credentials!
         </Alert>
-        <div className='col-4'>
-          <label htmlFor='email'>Email</label>
-          <input
-            type='text'
-            placeholder='Your email'
-            name='email'
+        <Form.Group>
+          <Form.Label htmlFor="email">Email</Form.Label>
+          <Form.Control
+            type="text"
+            placeholder="Your email"
+            name="email"
             onChange={handleInputChange}
             value={userFormData.email}
             required
           />
-          <output type='invalid'>Email is required!</output>
-        </div>
+          <Form.Control.Feedback type="invalid">
+            Email is required!
+          </Form.Control.Feedback>
+        </Form.Group>
 
-        <div className='col-4'>
-          <label htmlFor='password'>Password</label>
-          <input
-            type='password'
-            placeholder='Your password'
-            name='password'
+        <Form.Group>
+          <Form.Label htmlFor="password">Password</Form.Label>
+          <Form.Control
+            type="password"
+            placeholder="Your password"
+            name="password"
             onChange={handleInputChange}
             value={userFormData.password}
             required
           />
-          <output type='invalid'>Password is required!</output>
-        </div>
-        <button
+          <Form.Control.Feedback type="invalid">
+            Password is required!
+          </Form.Control.Feedback>
+        </Form.Group>
+        <Button
           disabled={!(userFormData.email && userFormData.password)}
-          type='submit'
-          variant='success'>
+          id="btn2"
+          type="submit"
+        >
           Submit 📬
-        </button>
-      </form>
+        </Button>
+      </Form>
     </>
   );
 };

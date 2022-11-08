@@ -1,14 +1,13 @@
 .jumbotron {
-    box-shadow: 5px 5px 7px 0px rgba(135,135,135,0.83);
-    background-image: url("https://res.cloudinary.com/dhqsixgmo/image/upload/v1667849701/giphy_cmedz0.gif");
-    background-size: cover;
-    height: 500px;
-    background-position: center;
+  box-shadow: 5px 5px 7px 0px rgba(135, 135, 135, 0.83);
+  background-image: url('https://res.cloudinary.com/dhqsixgmo/image/upload/v1667849701/giphy_cmedz0.gif');
+  background-size: cover;
+  height: 500px;
+  background-position: center;
 }
 
 .myText {
-    color: white;
-    font-weight: bold;
-    position: relative;
-    transform: translateY(100px)
+  color: white;
+  position: relative;
+  transform: translateY(100px);
 }
